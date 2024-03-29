@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/icon-logo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ Thống Tiêm Chủng Quốc Gia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha384-k6RqeXXCp9e/viKKrA5s2LKofH6Fmj5+Z2O7nRnbe1QF4JiZSd8ys/xZRJN4jib" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+
+
+    <!-- <script>
+        (function(w, d, s, o, f, js, fjs) {
+            w["botsonic_widget"] = o;
+            w[o] =
+                w[o] ||
+                function() {
+                    (w[o].q = w[o].q || []).push(arguments);
+                };
+            (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+            js.id = o;
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+        })(window, document, "script", "Botsonic", "https://widget.writesonic.com/CDN/botsonic.min.js");
+        Botsonic("init", {
+            serviceBaseUrl: "https://api.botsonic.ai",
+            token: "b6476bde-a6cb-43f4-989b-d23a28034a58",
+        });
+    </script> -->
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    var request = '';
+    var pattern = /đặt\s+lịch/i; // Mẫu để tìm kiếm
+    var partern2 = /dat\s+lich/i
+    $(document).on('input', '#kami-mind-chat-widget textarea', function () {
+        // Cập nhật biến request mỗi khi có nhập liệu
+        request = $(this).val();
+    });
+    $(document).on('click', '.button-send', function () {
+        sendRequest(pattern, request);
+    });
+
+    function sendRequest(pattern, request) {
+        if (pattern.test(request) || partern2.test(request)) {
+            window.location.href = '/book-appointment';
+        } else {
+            // Xử lý trường hợp không khớp với mẫu
+        }
+    }
+</script>
+<script id="kami-chat-widget" src="https://kamimind.ai/kami-chat-widget.js" token="MuwjMVBxGJZWTXI8OMji4ylTD0bPX52n"
+    charset="utf-8" botToken="e143910c-56c2-403e-a113-5e32ffed59f5" defer></script>
+
+</html>
